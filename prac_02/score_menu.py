@@ -32,7 +32,6 @@ def get_score(score):
         return "Passable"
     else:
         return "Bad"
-
 def show_stars(score):
     print("*" * int(score))
 
