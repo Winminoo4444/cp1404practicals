@@ -18,7 +18,6 @@ def main():
             print("Farewell. See you next time")
         else:
             print("Please choose a valid option")
-
 def get_valid_score():
     score = float(input("Enter a valid score (0-100): "))
     while score < 0 or score > 100:
