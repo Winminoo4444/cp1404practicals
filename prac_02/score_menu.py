@@ -24,7 +24,6 @@ def get_valid_score():
         print("Invalid score. Please enter a number between 0 and 100")
         score = float(input("Enter a valid score (0-100): "))
     return score
-
 def get_score(score):
     if score >= 90:
         return "Excellent"
