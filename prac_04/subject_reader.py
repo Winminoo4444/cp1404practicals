@@ -34,5 +34,4 @@ def final_report(data):
     """Function for displaying final report data"""
     for line in data:
         print(f"{line[0]} is taught by {line[1]} and has {line[2]} students")
-        print("")
 main()
