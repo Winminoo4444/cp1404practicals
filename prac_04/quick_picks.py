@@ -3,8 +3,6 @@ import random
 NUMBERS_PER_PICK = 6
 MINIMUM_AMOUNT = 1
 MAXIMUM_AMOUNT = 45
-
-
 def main():
     """Funciton for asking number of quick picks"""
     quick_pick_number = int(input("How many quick picks?: "))
