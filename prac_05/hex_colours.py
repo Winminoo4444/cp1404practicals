@@ -23,7 +23,7 @@ def validate_color_names():
     color_names = input("Enter the color name: ").title()
     while color_names not in COLOURS_CODES:
         print("Invalid Color Name")
-        color_names = input("Color Name: ").title()
+        color_names = input("Enter the color name: ").title()
     return color_names
 
 main()
