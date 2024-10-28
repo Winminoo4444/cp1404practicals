@@ -12,4 +12,3 @@ dynamic_language = [language for language in coding_languages if language.is_dyn
 print("The dynamically typed languages are:")
 for language in dynamic_language:
     print(f"{language.name}", end="\n")
-
