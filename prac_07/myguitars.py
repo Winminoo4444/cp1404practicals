@@ -1,6 +1,7 @@
 from prac_07.guitar import Guitar
 in_file = "guitars.csv"
 
+
 def main():
     guitars = []
     with open(in_file, 'r') as infile:
@@ -13,7 +14,6 @@ def main():
     sorted_guitars = sorted(guitars)
     for guitar in sorted_guitars:
         print(guitar)
-
 
 
 main()
