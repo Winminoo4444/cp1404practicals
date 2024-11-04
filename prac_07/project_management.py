@@ -11,6 +11,7 @@ MENU = """- (L)oad projects
 class_projects = []
 project_dictionary = {}
 
+
 def main():
     with open("projects.txt", "r", encoding="utf-8-sig") as in_file:
         data = in_file.readlines()
@@ -77,10 +78,12 @@ def main():
     autosave()
     print("Thank you for using custom-built project management software.")
 
+
 def restore_datetime():
     """This function will date object into string object"""
     for project in class_projects:
         project.start_date = project.start_date.strftime("%d/%m/%Y")
+
 
 def update_project(new_percentage, new_priority, project_choice):
     """This function will update the projects"""
@@ -88,6 +91,7 @@ def update_project(new_percentage, new_priority, project_choice):
                                              class_projects[project_choice].start_date, int(new_priority),
                                              float(class_projects[project_choice].cost_estimate),
                                              int(new_percentage))
+
 
 def sort_project_by_date(date, sorted_filtered_projects):
     """This function sort project by date"""
@@ -103,16 +107,19 @@ def sort_project_by_date(date, sorted_filtered_projects):
             if date == project.start_date:
                 sorted_filtered_projects.append(project)
 
+
 def remove_duplicated_dates(final_sorted_filtered_dates, sorted_filtered_dates):
     """This function will check if there is a duplicate dates """
     for date in sorted_filtered_dates:
         if date not in final_sorted_filtered_dates:
             final_sorted_filtered_dates.append(date)
 
+
 def filter_dates(filtered_dates, filtered_projects):
     """This function will add the filtered project to the list"""
     for project in filtered_projects:
         filtered_dates.append(project.start_date)
+
 
 def filter_projects(date, filtered_projects):
     """This function convert data to date and add to the list if the data is greater than date"""
@@ -120,6 +127,7 @@ def filter_projects(date, filtered_projects):
         project.start_date = datetime.datetime.strptime(str(project.start_date), "%d/%m/%Y").date()
         if project.start_date > date:
             filtered_projects.append(project)
+
 
 def validate_project_choice():
     """This function will add a project and check if there is a existed project in the file"""
@@ -133,6 +141,7 @@ def validate_project_choice():
         project_choice = int(input("Project choice: "))
     return project_choice
 
+
 def validate_date():
     """This function will ask the user for the date and check if its valid or not"""
     data = input("Start date (dd/mm/yy): ")
@@ -140,6 +149,7 @@ def validate_date():
         print("Invalid input")
         data = input("Start date (dd/mm/yy): ")
     return data
+
 
 def validate_cost_estimate():
     """This function will ask the user for the cost estimate"""
@@ -149,6 +159,7 @@ def validate_cost_estimate():
         print("Invalid input")
         data = float(input("Cost estimate: $"))
     return data
+
 
 def validate_priority(prompt):
     """This function will ask the user for the priority for the project"""
@@ -162,6 +173,7 @@ def validate_priority(prompt):
         data = int(input(prompt))
     return data
 
+
 def validate_percentage(prompt):
     """This function will ask user for the percentage of the project"""
     try:
@@ -174,6 +186,7 @@ def validate_percentage(prompt):
         data = int(input(prompt))
     return data
 
+
 def autosave():
     """This function will save the file"""
     output_file = open("projects.txt", "w")
@@ -184,11 +197,13 @@ def autosave():
             file=output_file)
     output_file.close()
 
+
 def get_choice():
     """This function will ask the user for a choice"""
     print(MENU, end="\n")
     choice = input(">>> ").upper()
     return choice
+
 
 def extract_data(data):
     """This function will extract data from the project.txt"""
